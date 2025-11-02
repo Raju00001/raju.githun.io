@@ -44,6 +44,29 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(0, 255, 136, 0.5);
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .logo-image:hover {
+            transform: scale(1.1);
+            border-color: rgba(0, 255, 136, 0.8);
+            box-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
+        }
+
+        .logo-text {
             font-size: 28px;
             font-weight: 700;
             background: linear-gradient(135deg, #00ff88, #00d4ff);
@@ -233,6 +256,39 @@
             gap: 60px;
             align-items: center;
             flex-wrap: wrap;
+        }
+
+        .about-image {
+            flex: 0 0 350px;
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 3px solid rgba(0, 255, 136, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 255, 136, 0.2);
+            transition: all 0.4s ease;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: 20px;
+            bottom: 20px;
+            border: 2px solid rgba(0, 255, 136, 0.2);
+            border-radius: 20px;
+            z-index: -1;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+            border-color: rgba(0, 255, 136, 0.6);
+            box-shadow: 0 25px 80px rgba(0, 255, 136, 0.4);
         }
 
         .about-text {
@@ -554,6 +610,15 @@
                 font-size: 12px;
             }
 
+            .logo-image {
+                width: 40px;
+                height: 40px;
+            }
+
+            .logo-text {
+                font-size: 22px;
+            }
+
             .hero-content h1 {
                 font-size: 48px;
             }
@@ -568,6 +633,13 @@
 
             .about-content {
                 flex-direction: column;
+            }
+
+            .about-image {
+                flex: 0 0 auto;
+                width: 100%;
+                max-width: 350px;
+                margin: 0 auto;
             }
 
             .education-timeline {
@@ -601,7 +673,10 @@
 <body>
     <header>
         <nav class="container">
-            <div class="logo">RA</div>
+            <a href="#home" class="logo">
+                <img src="FB_IMG_1734099716338.jpg" alt="Raju Ahmed" class="logo-image">
+                <span class="logo-text">RA</span>
+            </a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -626,6 +701,9 @@
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
+                <div class="about-image">
+                    <img src="FB_IMG_1734099716338.jpg" alt="Raju Ahmed">
+                </div>
                 <div class="about-text">
                     <p>I'm a passionate student of Educational Technology and Engineering at University of Frontier Technology, Bangladesh. I'm skilled in app development, data analysis, and programming with a focus on creating innovative solutions that matter.</p>
                     <p>I specialize in building cross-platform applications using Flutter, Kotlin, SQL, and Python. As a fast learner and self-motivated developer, I'm constantly exploring new technologies and pushing the boundaries of what's possible in mobile and web development.</p>
@@ -716,7 +794,7 @@
             <h2 class="section-title">Education</h2>
             <div class="education-timeline">
                 <div class="education-item">
-                    <h3>University of Frontier Technology</h3>
+                    <h3>University of Frontier Technology,Bangladesh</h3>
                     <div class="degree">Bachelor's in Educational Technology and Engineering</div>
                     <div class="session">Session: 2022-2023 • Bangladesh</div>
                 </div>
@@ -800,5 +878,4 @@
         });
     </script>
 </body>
-
 </html>
